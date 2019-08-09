@@ -1,0 +1,328 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#   * zell_purchase_report
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-21 15:08+0000\n"
+"PO-Revision-Date: 2017-03-21 15:08+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: zell_purchase_report
+#: model:ir.model.fields,field_description:zell_purchase_report.field_purchase_order_line_aliquota_ipi
+#: model:ir.ui.view,arch_db:zell_purchase_report.report_purchase_order_document
+msgid "% IPI"
+msgstr "% IPI"
+
+#. module: zell_purchase_report
+#: model:ir.ui.view,arch_db:zell_purchase_report.report_purchase_order_document
+msgid "<br/>\n"
+"\n"
+"                            <span class=\"margin-left\">CNPJ:</span>"
+msgstr "<br/>\n"
+"\n"
+"                            <span class=\"margin-left\">TAX ID:</span>"
+
+#. module: zell_purchase_report
+#: model:ir.ui.view,arch_db:zell_purchase_report.report_purchase_order_document
+msgid "<br/>\n"
+"                            <span class=\"margin-left\">Fone:</span>"
+msgstr "<br/>\n"
+"                            <span class=\"margin-left\">Phone:</span>"
+
+#. module: zell_purchase_report
+#: model:ir.ui.view,arch_db:zell_purchase_report.report_purchase_order_document
+msgid "<br/>\n"
+"                    <span>TOTAL FRETE....</span><span class=\"indent\"/>"
+msgstr "<br/>\n"
+"                    <span>SHIPPING....</span><span class=\"indent\"/>"
+
+#. module: zell_purchase_report
+#: model:ir.ui.view,arch_db:zell_purchase_report.report_purchase_order_document
+msgid "<br/>\n"
+"                    <span>TOTAL IPI......</span><span class=\"indent\"/>"
+msgstr "<br/>\n"
+"                    <span>TOTAL IPI......</span><span class=\"indent\"/>"
+
+#. module: zell_purchase_report
+#: model:ir.ui.view,arch_db:zell_purchase_report.report_purchase_order_document
+msgid "<br/>\n"
+"                    <span>TOTAL ST.......</span><span class=\"indent\"/>"
+msgstr "<br/>\n"
+"                    <span>TOTAL ST.......</span><span class=\"indent\"/>"
+
+#. module: zell_purchase_report
+#: model:ir.ui.view,arch_db:zell_purchase_report.report_purchase_order_document
+msgid "<br/>\n"
+"                    <span>VALOR TOTAL....</span><span class=\"indent\"/>"
+msgstr "<br/>\n"
+"                    <span>TOTAL VALUE....</span><span class=\"indent\"/>"
+
+#. module: zell_purchase_report
+#: model:ir.ui.view,arch_db:zell_purchase_report.report_purchase_order_document
+msgid "<span class=\"col-xs-2 enfase\">BANCO:</span>"
+msgstr "<span class=\"col-xs-2 enfase\">BANK:</span>"
+
+#. module: zell_purchase_report
+#: model:ir.ui.view,arch_db:zell_purchase_report.report_purchase_order_document
+msgid "<span class=\"col-xs-2 enfase\">CONTATO:</span>"
+msgstr "<span class=\"col-xs-2 enfase\">CONTACT:</span>"
+
+#. module: zell_purchase_report
+#: model:ir.ui.view,arch_db:zell_purchase_report.report_purchase_order_document
+msgid "<span class=\"col-xs-2 enfase\">ENDEREÇO:</span>"
+msgstr "<span class=\"col-xs-2 enfase\">ADDRESS:</span>"
+
+#. module: zell_purchase_report
+#: model:ir.ui.view,arch_db:zell_purchase_report.report_purchase_order_document
+msgid "<span class=\"col-xs-2 enfase\">OC Incluída por:</span>"
+msgstr "<span class=\"col-xs-2 enfase\">PO Included by:</span>"
+
+#. module: zell_purchase_report
+#: model:ir.ui.view,arch_db:zell_purchase_report.report_purchase_order_document
+msgid "<span class=\"col-xs-2 no-padding-right enfase\">FORNECEDOR: </span>"
+msgstr "<span class=\"col-xs-2 no-padding-right enfase\">SUPPLIER: </span>"
+
+#. module: zell_purchase_report
+#: model:ir.ui.view,arch_db:zell_purchase_report.report_purchase_order_document
+msgid "<span class=\"col-xs-3 enfase\">AGENCIA:</span>"
+msgstr "<span class=\"col-xs-3 enfase\">AGENCY:</span>"
+
+#. module: zell_purchase_report
+#: model:ir.ui.view,arch_db:zell_purchase_report.report_purchase_order_document
+msgid "<span class=\"col-xs-4 enfase\">C/C:</span>"
+msgstr "<span class=\"col-xs-4 enfase\">C/A:</span>"
+
+#. module: zell_purchase_report
+#: model:ir.ui.view,arch_db:zell_purchase_report.report_purchase_order_document
+msgid "<span class=\"col-xs-4 enfase\">CNPJ: </span>"
+msgstr "<span class=\"col-xs-4 enfase\">TAX ID: </span>"
+
+#. module: zell_purchase_report
+#: model:ir.ui.view,arch_db:zell_purchase_report.report_purchase_order_document
+msgid "<span class=\"col-xs-4 enfase\">FAX:</span>"
+msgstr "<span class=\"col-xs-4 enfase\">FAX:</span>"
+
+#. module: zell_purchase_report
+#: model:ir.ui.view,arch_db:zell_purchase_report.report_purchase_order_document
+msgid "<span class=\"col-xs-4 enfase\">FONE:</span>"
+msgstr "<span class=\"col-xs-4 enfase\">PHONE:</span>"
+
+#. module: zell_purchase_report
+#: model:ir.ui.view,arch_db:zell_purchase_report.report_purchase_order_document
+msgid "<span class=\"col-xs-4 enfase\">INSC. EST: </span>"
+msgstr "<span class=\"col-xs-4 enfase\">ST. REG: </span>"
+
+#. module: zell_purchase_report
+#: model:ir.ui.view,arch_db:zell_purchase_report.report_purchase_order_document
+msgid "<span class=\"enfase\">COBRANÇA:</span>"
+msgstr "<span class=\"enfase\">COLLECT:</span>"
+
+#. module: zell_purchase_report
+#: model:ir.ui.view,arch_db:zell_purchase_report.report_purchase_order_document
+msgid "<span class=\"enfase\">ENTREGA:</span>"
+msgstr "<span class=\"enfase\">DELIVERY:</span>"
+
+#. module: zell_purchase_report
+#: model:ir.ui.view,arch_db:zell_purchase_report.report_purchase_order_document
+msgid "<span class=\"enfase\">FATURAMENTO:</span>"
+msgstr "<span class=\"enfase\">BILLING:</span>"
+
+#. module: zell_purchase_report
+#: model:ir.ui.view,arch_db:zell_purchase_report.report_purchase_order_document
+msgid "<span class=\"margin-left\">Email:</span>"
+msgstr "<span class=\"margin-left\">Email:</span>"
+
+#. module: zell_purchase_report
+#: model:ir.ui.view,arch_db:zell_purchase_report.report_purchase_order_document
+msgid "<span class=\"margin-left\">Fax:</span>"
+msgstr "<span class=\"margin-left\">Fax:</span>"
+
+#. module: zell_purchase_report
+#: model:ir.ui.view,arch_db:zell_purchase_report.report_purchase_order_document
+msgid "<span class=\"margin-left\">Inscr. Est.:</span>"
+msgstr "<span class=\"margin-left\">St. Reg.:</span>"
+
+#. module: zell_purchase_report
+#: model:ir.ui.view,arch_db:zell_purchase_report.report_purchase_order_document
+msgid "<span class=\"word-margin-negative enfase\">ASSINATURAS</span>\n"
+"                            <br/>"
+msgstr "<span class=\"word-margin-negative enfase\">SIGNATURE</span>\n"
+"                            <br/>"
+
+#. module: zell_purchase_report
+#: model:ir.ui.view,arch_db:zell_purchase_report.report_purchase_order_document
+msgid "<span class=\"word-margin-negative enfase\">ATENÇÃO</span>\n"
+"                    <br/>"
+msgstr "<span class=\"word-margin-negative enfase\">ATTENTION</span>\n"
+"                    <br/>"
+
+#. module: zell_purchase_report
+#: model:ir.ui.view,arch_db:zell_purchase_report.report_purchase_order_document
+msgid "<span class=\"word-margin-negative enfase\">OBSERVAÇÕES</span>\n"
+"                            <br/>"
+msgstr "<span class=\"word-margin-negative enfase\">NOTES</span>\n"
+"                            <br/>"
+
+#. module: zell_purchase_report
+#: model:ir.ui.view,arch_db:zell_purchase_report.report_purchase_order_document
+msgid "<span>- Havendo rejeição parcial ou total por erro de fornecimento, os fretes de retorno e reposição ficarão por conta do fornecedor.</span>\n"
+"                    <br/>\n"
+"                    <br/>\n"
+"                    <span>- Conforme Condições Gerais de Fornecimento</span>"
+msgstr "<span>- In the event of a parcial or total error due to delivery, return shipping and replacement will be at the supplier's expense.</span>\n"
+"                    <br/>\n"
+"                    <br/>\n"
+"                    <span>- According to Supply's General Conditions</span>"
+
+#. module: zell_purchase_report
+#: model:ir.ui.view,arch_db:zell_purchase_report.report_purchase_order_document
+msgid "<span>Página: </span>\n"
+"                    <span class=\"page\"/>"
+msgstr "<span>Page: </span>\n"
+"                    <span class=\"page\"/>"
+
+#. module: zell_purchase_report
+#: model:ir.ui.view,arch_db:zell_purchase_report.report_purchase_order_document
+msgid "<span>TOTAL SEM IPI..</span><span class=\"indent\"/>"
+msgstr "<span>TOTAL WITHOUT IPI..</span><span class=\"indent\"/>"
+
+#. module: zell_purchase_report
+#: model:ir.ui.view,arch_db:zell_purchase_report.report_purchase_order_document
+msgid "CONDIÇÕES DE FORNECIMENTO"
+msgstr "SUPPLY CONDITIONS"
+
+#. module: zell_purchase_report
+#: model:ir.ui.view,arch_db:zell_purchase_report.report_purchase_order_document
+msgid "CONDIÇÕES DE PAGAMENTO:"
+msgstr "PAYMENT CONDITIONS:"
+
+#. module: zell_purchase_report
+#: model:ir.ui.view,arch_db:zell_purchase_report.report_purchase_order_document
+msgid "CÓDIGO DESENHO"
+msgstr "CODE"
+
+#. module: zell_purchase_report
+#: model:ir.ui.view,arch_db:zell_purchase_report.report_purchase_order_document
+msgid "DATA DE EMISSÃO:"
+msgstr "DATE OF ISSUE:"
+
+#. module: zell_purchase_report
+#: model:ir.ui.view,arch_db:zell_purchase_report.report_purchase_order_document
+msgid "DATA DE ENTREGA"
+msgstr "DATE OF DELIVERY"
+
+#. module: zell_purchase_report
+#: model:ir.ui.view,arch_db:zell_purchase_report.report_purchase_order_document
+msgid "DESCRIÇÃO"
+msgstr "DESCRIPTION"
+
+#. module: zell_purchase_report
+#: model:ir.ui.view,arch_db:zell_purchase_report.report_purchase_order_document
+msgid "Deverá ser fornecido certificado de qualidade dos materiais"
+msgstr "Material quality certificate must be provided"
+
+#. module: zell_purchase_report
+#: model:ir.ui.view,arch_db:zell_purchase_report.report_purchase_order_document
+msgid "No Fornecedor"
+msgstr "In the Supplier"
+
+#. module: zell_purchase_report
+#: model:ir.ui.view,arch_db:zell_purchase_report.report_purchase_order_document
+msgid "No Recebimento"
+msgstr "On Receipt"
+
+#. module: zell_purchase_report
+#: model:ir.ui.view,arch_db:zell_purchase_report.report_purchase_order_document
+msgid "O produto/material somente será aceito após inspeção"
+msgstr "The product/material will only be accepted after inspection"
+
+#. module: zell_purchase_report
+#: model:ir.ui.view,arch_db:zell_purchase_report.report_purchase_order_document
+msgid "ORDEM DE COMPRA Nº"
+msgstr "PURCHASE ORDER Nº"
+
+#. module: zell_purchase_report
+#: model:ir.ui.view,arch_db:zell_purchase_report.report_purchase_order_document
+msgid "Os ensaios não destrutivos serão testemunhados"
+msgstr "Non-destructive tests will be witnessed"
+
+#. module: zell_purchase_report
+#: model:ir.ui.view,arch_db:zell_purchase_report.report_purchase_order_document
+msgid "PREÇO UNITÁRIO"
+msgstr "UNIT PRICE"
+
+#. module: zell_purchase_report
+#: model:ir.model,name:zell_purchase_report.model_res_partner
+msgid "Partner"
+msgstr "Partner"
+
+#. module: zell_purchase_report
+#: model:ir.actions.report.xml,name:zell_purchase_report.action_purchase_order_report
+msgid "Pedido de Compra Zell"
+msgstr "Zell Purchase Order"
+
+#. module: zell_purchase_report
+#: model:ir.model,name:zell_purchase_report.model_purchase_order
+msgid "Purchase Order"
+msgstr "Purchase Order"
+
+#. module: zell_purchase_report
+#: model:ir.model,name:zell_purchase_report.model_purchase_order_line
+msgid "Purchase Order Line"
+msgstr "Purchase Order Line"
+
+#. module: zell_purchase_report
+#: model:ir.ui.view,arch_db:zell_purchase_report.report_purchase_order_document
+msgid "QUANTIDADE"
+msgstr "QUANTITY"
+
+#. module: zell_purchase_report
+#: model:ir.ui.view,arch_db:zell_purchase_report.report_purchase_order_document
+msgid "TOTALIZAÇÃO:"
+msgstr "TOTAL:"
+
+#. module: zell_purchase_report
+#: model:ir.ui.view,arch_db:zell_purchase_report.report_purchase_order_document
+msgid "UN"
+msgstr "UN"
+
+#. module: zell_purchase_report
+#: model:ir.model.fields,field_description:zell_purchase_report.field_purchase_order_user_confirmed_purchased_order_id
+msgid "Usuário"
+msgstr "User"
+
+#. module: zell_purchase_report
+#: model:ir.ui.view,arch_db:zell_purchase_report.report_purchase_order_document
+msgid "VALOR DO IPI"
+msgstr "VALUE OF IPI"
+
+#. module: zell_purchase_report
+#: model:ir.ui.view,arch_db:zell_purchase_report.report_purchase_order_document
+msgid "VALOR SEM IPI"
+msgstr "VALUE WITHOUT IPI"
+
+#. module: zell_purchase_report
+#: model:ir.ui.view,arch_db:zell_purchase_report.report_purchase_order_document
+msgid "VALORES EM REAL"
+msgstr "VALUES IN REAL"
+
+#. module: zell_purchase_report
+#: model:ir.model.fields,field_description:zell_purchase_report.field_purchase_order_line_valor_ipi
+#: model:ir.model.fields,field_description:zell_purchase_report.field_purchase_order_total_ipi
+msgid "Valor IPI"
+msgstr "VALUE IPI"
+
+#. module: zell_purchase_report
+#: model:ir.model.fields,field_description:zell_purchase_report.field_purchase_order_line_valor_st
+#: model:ir.model.fields,field_description:zell_purchase_report.field_purchase_order_total_st
+msgid "Valor ST"
+msgstr "VALUE ST"
+

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="trust_report_sale_order_lel" model="ir.ui.view">
+        <field name="name">trust_report.sale.order.lel</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+          <field name="incoterm" position="before">
+              <field name="transportadora"/>
+          </field>
+          <field name="picking_policy" position="after">
+            <label for="garantia"/>
+              <div>
+                <field name="garantia" class="oe_inline"/> Meses
+              </div>
+          </field>
+
+          <xpath expr="//field[@name='order_line']/form/group/group/field[@name='detalhes_calculo']" position="after">
+            <field name="num_item"/>
+          </xpath>
+        </field>
+    </record>
+
+</odoo>
