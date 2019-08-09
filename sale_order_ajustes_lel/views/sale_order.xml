@@ -31,45 +31,44 @@
         <field name="mode">primary</field>
         <field name="arch" type="xml">
             <search string="Search Sales Order">
-                    <filter string="Para Faturar" domain="[('qty_to_invoice','&lt;&gt;', 0)]"/>
-                    <separator/>
-                    <field name="product_category_id"/>
-                    <field name="order_partner_id" operator="child_of"/>
-                    <group expand="0" string="Group By">
-                        <filter string="Order" domain="[]" context="{'group_by':'order_id'}"/>
-                        <filter string="Categoria de produto" domain="[]" context="{'group_by':'product_category_id'}"/>
-                    </group>
-                </search>
+                <filter name="to_invoice" string="Para Faturar" domain="[('qty_to_invoice','&lt;&gt;', 0)]"/>
+                <separator/>
+                <field name="product_category_id"/>
+                <field name="order_partner_id" operator="child_of"/>
+                <group expand="0" string="Group By">
+                    <filter name="order" string="Order" domain="[]" context="{'group_by':'order_id'}"/>
+                    <filter name="product_category_id" string="Categoria de produto" domain="[]" context="{'group_by':'product_category_id'}"/>
+                </group>
+            </search>
         </field>
     </record>
 
-
-        <record id="view_order_line_form" model="ir.ui.view">
-            <field name="name">lel_sale_order_line.form</field>
-            <field name="model">sale.order.line</field>
-            <field name="arch" type="xml">
-            <form string="Linha da Cotação">
-                <header>
+    <record id="view_order_line_form" model="ir.ui.view">
+        <field name="name">lel_sale_order_line.form</field>
+        <field name="model">sale.order.line</field>
+        <field name="arch" type="xml">
+        <form string="Linha da Cotação">
+            <header>
+                <field name="order_id"/>
+            </header>
+                <group>
+                    <field name="product_id"/>
                     <field name="order_id"/>
-                </header>
-                    <group>
-                        <field name="product_id"/>
-                        <field name="order_id"/>
-                        <field name="order_partner_id"/>
-                        <field name="name"/>
-                        <field name="salesman_id"/>
-                    </group>
-                    <group>
-                        <field name="product_uom_qty" string="Qty"/>
-                        <field name="qty_delivered"/>
-                        <field name="qty_invoiced"/>
-                        <field name="qty_to_invoice"/>
-                        <field name="product_uom" string="Unit of Measure" groups="product.group_uom"/>
-                        <field name="price_subtotal" sum="Total" widget="monetary"/>
-                    </group>
-            </form>
-            </field>
-        </record>
+                    <field name="order_partner_id"/>
+                    <field name="name"/>
+                    <field name="salesman_id"/>
+                </group>
+                <group>
+                    <field name="product_uom_qty" string="Qty"/>
+                    <field name="qty_delivered"/>
+                    <field name="qty_invoiced"/>
+                    <field name="qty_to_invoice"/>
+                    <field name="product_uom" string="Unit of Measure" groups="product.group_uom"/>
+                    <field name="price_subtotal" sum="Total" widget="monetary"/>
+                </group>
+        </form>
+        </field>
+    </record>
 
     <record id="action_lel_order_line" model="ir.actions.act_window">
         <field name="name">Linhas das Cotações</field>
@@ -83,7 +82,7 @@
     </record>
 
     <menuitem sequence="10" action="action_lel_order_line"
-              id="menu_action_payment_order_line"
-              parent="sales_team.menu_sales"/>
+        id="menu_action_payment_order_line"
+        parent="sale.sale_order_menu"/>
 
 </odoo>
