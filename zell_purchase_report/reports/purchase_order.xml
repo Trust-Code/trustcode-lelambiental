@@ -16,7 +16,7 @@
     <report
         id="zell_purchase_report.action_purchase_order_report"
         model="purchase.order"
-        report_type="qweb-pdf"
+        report_type="qweb-html"
         string="Pedido de Compra Zell"
         name="zell_purchase_report.main_template_purchase_order_report"
         file="zell_purchase_report.main_template_purchase_order_report"
@@ -31,48 +31,54 @@
 
     <template id="report_purchase_order_document">
         <t t-set="o" t-value="o.with_context({'lang':o.partner_id.lang})"/>
-        <div class="header container zell_purchase_report" style="margin-right: 7px;">
+        <div class="header zell_purchase_report">
             <div class="row">
                 <div class="col-7 border-div">
-                    <div class="col-4">
-                        <img class="logo" t-att-src="'data:image/png;base64,%s' % o.company_id.logo" />
-                    </div>
-                    <div class="col-8" >
-                        <span class="legal-name" t-field="o.company_id.legal_name"></span><br />
-                        <br />
-                        <span class="company-data">
-                            <span t-field="o.company_id.street"></span> -
-                            <span t-field="o.company_id.number"/>
-                            <span t-field="o.company_id.street2"/> -
-                            <span t-field="o.company_id.zip"></span> -
-                            <span t-field="o.company_id.city_id.name"></span> -
-                            <span t-field="o.company_id.state_id.code" />
-                            <br />
-                            <span>Fone:</span>
-                            <span t-field="o.company_id.phone"/>
-                            <span>Email:</span>
-                            <span t-field="o.company_id.email"/>
-                            <br />
+                    <div class="row">
+                      <div class="col-4">
+                          <img class="logo" t-att-src="'data:image/png;base64,%s' % to_text(o.company_id.logo)" />
+                      </div>
+                      <div class="col-8" >
+                          <span class="legal-name" t-field="o.company_id.legal_name"></span><br />
+                          <span class="company-data">
+                              <span t-field="o.company_id.street"></span> -
+                              <span t-field="o.company_id.number"/>
+                              <span t-field="o.company_id.street2"/> -
+                              <span t-field="o.company_id.zip"></span> -
+                              <span t-field="o.company_id.city_id.name"></span> -
+                              <span t-field="o.company_id.state_id.code" />
+                              <br />
+                              <span>Fone:</span>
+                              <span t-field="o.company_id.phone"/>
+                              <span>Email:</span>
+                              <span t-field="o.company_id.email"/>
+                              <br />
 
-                            <span>CNPJ:</span>
-                            <span t-field="o.company_id.cnpj_cpf"/>
-                            <span>Inscr. Est.:</span>
-                            <span t-field="o.company_id.inscr_est"/>
-                        </span>
-
+                              <span>CNPJ:</span>
+                              <span t-field="o.company_id.cnpj_cpf"/>
+                              <span>Inscr. Est.:</span>
+                              <span t-field="o.company_id.inscr_est"/>
+                          </span>
+                      </div>
                     </div>
                 </div><!-- div col 7-->
 
                 <div class="col-5 border-div">
-                    <span class="pull-right text-right"><b>ORDEM DE COMPRA Nº<span t-field="o.id" /></b></span>
-                    <span class="small align-bottom">DATA DE EMISSÃO: <span t-field="o.date_order" /></span>
-                    <span>Página: </span>
-                    <span class="page"/>
-                </div><!-- div col 4-->
+                  <div class="row">
+                    <div class="col-6">
+                      <span>Página: </span>
+                      <span class="page"/>
+                    </div>
+                    <div class="col-6">
+                      <span class="pull-right text-right"><b>ORDEM DE COMPRA Nº <t t-esc="o.id" /></b></span>
+                    </div>
+                  </div>
+                  <span class="small">DATA DE EMISSÃO: <span t-field="o.date_order" /></span>
+                </div>
             </div>
         </div>
-        <div class="container uppercase zell_purchase_report">
-            <div class="row">
+        <div class="article uppercase zell_purchase_report">
+            <div class="row" style="font-size: 10px;">
                 <div class="col-7 border-div">
                     <!-- inicio fornecedor, cnpj e insc -->
                     <div class="row">
@@ -144,39 +150,6 @@
                     <!-- final end. fone, fax e contato -->
                     <br/>
 
-                    <!-- inicio banco e c/c -->
-                    <!-- <div class="row">
-                        <div class="col-xs-12">
-                            <div class="row margin-tb">
-                                <span class="col-xs-2 enfase">BANCO:</span>
-                                <span class="margin-left" t-field="o.partner_id.account_ids.bank_id.name" />
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <div class="row margin-bottom">
-                                <div class="col-xs-8">
-                                    <div class="row">
-                                        <span class="col-xs-3 enfase">AGENCIA:</span>
-                                        <span class="margin-left" t-field="o.partner_id.account_ids.bra_number" />
-                                        <t t-if="o.partner_id.account_ids.bra_number_dig">
-                                        - <span class="margin-left" t-field="o.partner_id.account_ids.bra_number_dig"/>
-                                        </t>
-                                    </div>
-                                </div>
-                                <div class="col-xs-4">
-                                        <span class="col-xs-4 enfase">C/C:</span>
-                                        <span class="margin-left" t-field="o.partner_id.account_ids.acc_number" />
-                                        <t t-if="o.partner_id.account_ids.acc_number_dig">
-                                            - <span class="margin-left" t-field="o.partner_id.account_ids.acc_number_dig"/>
-                                        </t>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
-                    <!-- final banco e c/c -->
-
                 </div><!-- div col 7-->
 
                 <div class="col-5 small-text">
@@ -184,7 +157,7 @@
                         <div class="col-12 border-div">
                             <div class="row margin-top">
                                 <div class="col-2 no-padding-right"><span class="enfase">ENTREGA:</span></div>
-                                <div class="">
+                                <div class="col-10">
                                     <span class=" margin-tb" t-field="o.company_id.legal_name"></span> -
                                     <span class=" margin-tb" t-field="o.company_id.cnpj_cpf"></span> -
                                     <span class=" margin-tb" t-field="o.company_id.inscr_est"></span>
@@ -192,7 +165,7 @@
                             </div>
                             <div class="row margin-tb">
                                 <div class="col-2 no-padding-right"></div>
-                                <div>
+                                <div class="col-10">
                                     <span class="margin-bottom">
                                         <span class="" t-field="o.company_id.street"/> -
                                         <span class="" t-field="o.company_id.number"/>
@@ -208,7 +181,7 @@
                         <div class="col-12 border-div">
                             <div class="row margin-top">
                                 <div class="col-2 no-padding-right"><span class="enfase">COBRANÇA:</span></div>
-                                <div class="">
+                                <div class="col-10">
                                     <span class=" margin-tb" t-field="o.company_id.legal_name"></span> -
                                     <span class=" margin-tb" t-field="o.company_id.cnpj_cpf"></span> -
                                     <span class=" margin-tb" t-field="o.company_id.inscr_est"></span>
@@ -216,7 +189,7 @@
                             </div>
                             <div class="row margin-tb">
                                 <div class="col-2 no-padding-right"></div>
-                                <div>
+                                <div class="col-10">
                                     <span class="margin-bottom">
                                         <span class="" t-field="o.company_id.street"/> -
                                         <span class="" t-field="o.company_id.number"/>
@@ -232,8 +205,8 @@
                     <div class="row" style="min-height: 55px;">
                         <div class="col-12 border-div">
                             <div class="row margin-top">
-                                <div class="col-2 no-padding-right"><span class="enfase">FATURAMENTO:</span></div>
-                                <div class="">
+                                <div class="col-2 no-padding-right"><span class="enfase">FATURAMENTO</span></div>
+                                <div class="col-10">
                                     <span class=" margin-tb" t-field="o.company_id.legal_name"></span> -
                                     <span class=" margin-tb" t-field="o.company_id.cnpj_cpf"></span> -
                                     <span class=" margin-tb" t-field="o.company_id.inscr_est"></span>
@@ -241,7 +214,7 @@
                             </div>
                             <div class="row margin-tb">
                                 <div class="col-2 no-padding-right"></div>
-                                <div>
+                                <div class="col-10">
                                     <span class="margin-bottom">
                                         <span class="" t-field="o.company_id.street"/> -
                                         <span class="" t-field="o.company_id.number"/>
@@ -256,52 +229,47 @@
                 </div> <!-- Final col 5 -->
 
             </div><!-- Final div class "row" -->
-            <br/>
             <div class="row">
-                <div class="col-12">
-                    <div class="row">
-                        <table class="table table-condensed table-border">
-                            <thead>
-                                <tr>
-                                    <th>CÓDIGO DESENHO</th>
-                                    <th>DESCRIÇÃO</th>
-                                    <th>DATA DE ENTREGA</th>
-                                    <th>QUANTIDADE</th>
-                                    <th>UN</th>
-                                    <th>PREÇO UNITÁRIO</th>
-                                    <th>VALOR SEM IPI</th>
-                                    <th>% IPI</th>
-                                    <th>VALOR DO IPI</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <t t-foreach="o.order_line" t-as="l">
-                                    <tr>
-                                        <td><span t-esc="l.product_id.default_code and l.product_id.default_code.replace('.', '')"></span></td>
-                                        <td><span t-field="l.name"></span></td>
-                                        <td>
-                                            <span t-field="l.date_planned" t-field-options='{"format": "dd/MM/yyyy"}' >
-                                            </span>
-                                        </td>
-                                        <td><span t-esc="l.product_qty"></span></td>
-                                        <td><span t-field="l.product_id.uom_po_id" /></td>
-                                        <td><span t-esc="'%.2f'%(l.price_unit)"></span></td>
-                                        <td><span t-esc="'%.2f'%(l.price_subtotal)"/></td>
-                                        <td><span t-esc="l.aliquota_ipi"/></td>
-                                        <td><span t-esc="'%.2f'%(l.valor_ipi)"/></td>
-                                    </tr>
-                                </t>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+              <div class="col-12" style="padding:0px; font-size: 10px;">
+                <table class="table table-condensed table-border">
+                    <thead>
+                        <tr>
+                            <th>CÓDIGO DESENHO</th>
+                            <th>DESCRIÇÃO</th>
+                            <th>DATA DE ENTREGA</th>
+                            <th>QUANTIDADE</th>
+                            <th>UN</th>
+                            <th>PREÇO UNITÁRIO</th>
+                            <th>VALOR SEM IPI</th>
+                            <th>% IPI</th>
+                            <th>VALOR DO IPI</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <t t-foreach="o.order_line" t-as="l">
+                            <tr>
+                                <td><span t-esc="l.product_id.default_code and l.product_id.default_code.replace('.', '')"></span></td>
+                                <td><span t-field="l.name"></span></td>
+                                <td>
+                                    <span t-field="l.date_planned" t-field-options='{"format": "dd/MM/yyyy"}' >
+                                    </span>
+                                </td>
+                                <td><span t-esc="l.product_qty"></span></td>
+                                <td><span t-field="l.product_id.uom_po_id" /></td>
+                                <td><span t-esc="'%.2f'%(l.price_unit)"></span></td>
+                                <td><span t-esc="'%.2f'%(l.price_subtotal)"/></td>
+                                <td><span t-esc="l.aliquota_ipi"/></td>
+                                <td><span t-esc="'%.2f'%(l.valor_ipi)"/></td>
+                            </tr>
+                        </t>
+                    </tbody>
+                </table>
+              </div>
             </div>
-            <br/>
-
         </div>
         <div class="footer zell_purchase_report">
 
-            <div class="row">
+            <div class="row" style="font-size: 10px;">
                 <div class="col-5 margin-right">
                     <div class="row">
                         <div class="col-12 border-div postscript-height">

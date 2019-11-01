@@ -33,9 +33,7 @@
     /*padding-top:10px;*/
 }
 .zell_purchase_report .border-div{
-    line-height: 12px;
     border: 1px solid black;
-    margin: 2px;
     padding: 3px;
 }
 
@@ -77,6 +75,7 @@
 
 .zell_purchase_report .table > tbody > tr > td{
     border-top: none;
+    padding: 2px;
 }
 .zell_purchase_report .table > tbody > tr{
     border-bottom: 1px dotted black !important;
