@@ -16,7 +16,7 @@
     <report
         id="zell_purchase_report.action_purchase_order_report"
         model="purchase.order"
-        report_type="qweb-html"
+        report_type="qweb-pdf"
         string="Pedido de Compra Zell"
         name="zell_purchase_report.main_template_purchase_order_report"
         file="zell_purchase_report.main_template_purchase_order_report"
