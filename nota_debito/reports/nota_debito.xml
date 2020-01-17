@@ -46,7 +46,7 @@
                 <div class="col-8">
                     <div class="card">
                         <div class="card-header bg-info" style="padding:3px 6px;">
-                            <h3 class="card-title text-center">Nota de Débito</h3>
+                            <h5 class="card-title text-center">Nota de Débito</h5>
                         </div>
                         <div class="card-body" style="padding: 5px 15px;">
                             <strong style="center">Data de emissão: <span t-field="doc.date_invoice" /></strong><br />
@@ -56,7 +56,7 @@
                 <div class="col-4">
                     <div class="card">
                         <div class="card-header bg-info" style="padding:3px 6px;">
-                            <h5 class="card-title">Nº FORMULÁRIO <span class="pull-right" t-field="doc.number" /></h5>
+                            <h6 class="card-title">Nº FORMULÁRIO <span class="pull-right" t-field="doc.number" /></h6>
                         </div>
                     </div>
                 </div>
@@ -66,7 +66,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header br bg-info" style="padding:3px 6px;">
-                            <h3 class="card-title text-center">Destinatário</h3>
+                            <h5 class="card-title text-center">Destinatário</h5>
                         </div>
                         <div class="card-body" style="padding: 5px 15px;">
                             <address style="margin-bottom:0px;">
@@ -107,10 +107,10 @@
             <div class="row">
                 <div class="col-8">
                     <div class="card" style="min-height:150px;">
-                        <div class="card-header" style="padding:3px 6px;">
-                            <h3 class="card-title text-center">Débito Fatura / Duplicatas</h3>
+                        <div class="card-header bg-info" style="padding:3px 6px;">
+                            <h5 class="card-title text-center">Débito Fatura / Duplicatas</h5>
                         </div>
-                        <div class="card-body" style="padding: 0px 10px;">
+                        <div class="card-body">
                             <div class="row">
                                 <div class="col-4">
                                     <table class="table table-bordered">
@@ -146,9 +146,9 @@
                     </div>
                 </div>
                 <div class="col-4">
-                    <div class="card card-primary" style="min-height:150px;">
-                        <div class="card-heading" style="padding:3px 2px;">
-                            <h3 class="card-title center">Para Uso da Instituição Financeira</h3>
+                    <div class="card" style="min-height:150px;">
+                        <div class="card-header bg-info" style="padding:3px 2px;">
+                            <h5 class="card-title text-center">Para Uso da Instituição Financeira</h5>
                         </div>
                         <div class="card-body">
                         </div>
@@ -160,7 +160,7 @@
                 <div class="col-6">
                     <div class="card" style="min-height:200px;">
                         <div class="card-header bg-info" style="padding:3px 6px;">
-                            <h3 class="card-title text-center">Descrição dos Serviços</h3>
+                            <h5 class="card-title text-center">Descrição dos Serviços</h5>
                         </div>
                         <div class="card-body" style="padding: 5px 15px;">
                             <t t-foreach="doc.invoice_line_ids" t-as="line">
@@ -197,8 +197,8 @@
             <div class="row">
                 <div class="col-12">
                     <div class="card card-primary">
-                        <div class="card-header bg-primary" style="padding:3px 6px;">
-                            <h3 class="card-title text-center">Dados Adicionais</h3>
+                        <div class="card-header bg-info" style="padding:3px 6px;">
+                            <h5 class="card-title text-center">Dados Adicionais</h5>
                         </div>
                         <div class="card-body" style="padding: 5px 15px;">
                             <p t-raw="doc.compute_legal_information()">
