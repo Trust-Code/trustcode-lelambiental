@@ -20,7 +20,6 @@
         'br_sale',
     ],
     'data': [
-        'reports/sale_order.xml',
         'views/sale_order.xml',
     ],
 }
