@@ -10,7 +10,7 @@
 
     <template id="nota_debito_document">
         <t t-set="doc" t-value="doc.with_context({'lang':doc.partner_id.lang})" />
-        <div class="article">
+        <div class="article" style="width:1200px;">
             <div class="row">
                 <div class="col-8">
                     <div class="card">
@@ -36,7 +36,7 @@
                 <div class="col-4">
                     <div class="card">
                         <div class="card-body text-center" style="padding: 5px 15px;">
-                            <img style="height:140px;" t-att-src="'data:image/png;base64,%s' % to_text(doc.company_id.logo)" />
+                            <img style="max-height:260px;max-width:350px;" t-att-src="'data:image/png;base64,%s' % to_text(doc.company_id.logo)" />
                         </div>
                     </div>
                 </div>
