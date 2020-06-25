@@ -10,6 +10,7 @@ class SaleOrder(models.Model):
     _inherit = 'sale.order'
 
     state_id = fields.Many2one(related="partner_id.state_id", readonly=1, store=True)
+    lost_reason_id = fields.Many2one('crm.lost.reason', string="Razão de perda")
 
     @api.depends('order_line.qty_delivered', 'order_line.qty_invoiced', 'state')
     def _compute_balance_to_invoice(self):
@@ -37,8 +38,9 @@ class SaleReport(models.Model):
     _inherit = "sale.report"
 
     state_id = fields.Many2one('res.country.state', 'Estado', readonly=True)
+    lost_reason_id = fields.Many2one('crm.lost.reason', string="Razão de perda", readonly=True)
 
     def _query(self, with_clause='', fields={}, groupby='', from_clause=''):
-        fields['state_id'] = ", s.state_id as state_id"
-        groupby += ', s.state_id'
+        fields['state_id'] = ", s.state_id as state_id, s.lost_reason_id as lost_reason_id"
+        groupby += ', s.state_id, s.lost_reason_id'
         return super(SaleReport, self)._query(with_clause, fields, groupby, from_clause)

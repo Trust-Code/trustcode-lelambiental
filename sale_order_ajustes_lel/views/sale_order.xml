@@ -16,11 +16,20 @@
         <field name="model">sale.order</field>
         <field name="inherit_id" ref="sale.view_order_form" />
         <field name="arch" type="xml">
+            <button name="action_cancel" position="after">
+                <button name="432" states="draft,sent,sale" string="Cancelar" type="action" context="{'default_type': 'sale_order'}" />
+            </button>
+            <button name="action_cancel" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </button>
             <field name="amount_total" position="after">
                 <div class="oe_subtotal_footer_separator oe_inline o_td_label">
                     <label for="balance_to_invoice"/>
                 </div>
                 <field name="balance_to_invoice" nolabel="1" widget="monetary" class="oe_subtotal_footer_separator" style="font-size:13px;font-weight:normal;padding-top:4px;" options="{'currency_field': 'currency_id'}"/>
+            </field>
+            <field name="analytic_account_id" position="after">
+                <field name="lost_reason_id" />
             </field>
         </field>
     </record>
@@ -33,6 +42,7 @@
         <field name="arch" type="xml">
             <filter name="order_month" position="after">
                 <filter string="Estados" name="group_state" domain="[]" context="{'group_by':'state_id'}"/>
+                <filter string="Razão de Perda" name="group_lost" domain="[]" context="{'group_by':'lost_reason_id'}"/>
             </filter>
         </field>
     </record>
@@ -45,6 +55,7 @@
         <field name="arch" type="xml">
             <xpath expr="//field[@name='country_id']" position="after">
                 <field name="state_id"/>
+                <field name="lost_reason_id"/>
             </xpath>
         </field>
     </record>
