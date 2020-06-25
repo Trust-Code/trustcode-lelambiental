@@ -9,6 +9,8 @@ from odoo import api, fields, models
 class SaleOrder(models.Model):
     _inherit = 'sale.order'
 
+    state_id = fields.Many2one(related="partner_id.state_id", readonly=1, store=True)
+
     @api.depends('order_line.qty_delivered', 'order_line.qty_invoiced', 'state')
     def _compute_balance_to_invoice(self):
         for order in self:
@@ -29,3 +31,14 @@ class SaleOrderLine(models.Model):
 
     product_category_id = fields.Many2one(
         related='product_id.categ_id', readonly=True, store=True)
+
+
+class SaleReport(models.Model):
+    _inherit = "sale.report"
+
+    state_id = fields.Many2one('res.country.state', 'Estado', readonly=True)
+
+    def _query(self, with_clause='', fields={}, groupby='', from_clause=''):
+        fields['state_id'] = ", s.state_id as state_id"
+        groupby += ', s.state_id'
+        return super(SaleReport, self)._query(with_clause, fields, groupby, from_clause)

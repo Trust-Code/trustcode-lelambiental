@@ -25,6 +25,31 @@
         </field>
     </record>
 
+
+    <record id="view_sale_order_search" model="ir.ui.view">
+        <field name="name">view_sale_order_search</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_sales_order_filter" />
+        <field name="arch" type="xml">
+            <filter name="order_month" position="after">
+                <filter string="Estados" name="group_state" domain="[]" context="{'group_by':'state_id'}"/>
+            </filter>
+        </field>
+    </record>
+
+
+    <record id="sale_report_view_search_website_inherit" model="ir.ui.view">
+        <field name="name">sale.report.view.search.inherit</field>
+        <field name="model">sale.report</field>
+        <field name="inherit_id" ref="sale.view_order_product_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='country_id']" position="after">
+                <field name="state_id"/>
+            </xpath>
+        </field>
+    </record>
+
+
     <record id="lel_order_product_categ" model="ir.ui.view">
         <field name="name">lel.order.search</field>
         <field name="model">sale.order.line</field>
