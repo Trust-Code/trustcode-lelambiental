@@ -4,3 +4,4 @@
 
 from . import sale_order
 from . import crm_lost
+from . import account_invoice
