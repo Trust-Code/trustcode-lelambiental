@@ -17,7 +17,7 @@
         <field name="inherit_id" ref="sale.view_order_form" />
         <field name="arch" type="xml">
             <button name="action_cancel" position="after">
-                <button name="432" states="draft,sent,sale" string="Cancelar" type="action" context="{'default_type': 'sale_order'}" />
+                <button name="%(crm.crm_lead_lost_action)d" states="draft,sent,sale" string="Cancelar" type="action" context="{'default_type': 'sale_order'}" />
             </button>
             <button name="action_cancel" position="attributes">
                 <attribute name="invisible">1</attribute>
