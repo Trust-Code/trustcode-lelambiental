@@ -18,7 +18,6 @@ class SaleOrder(models.Model):
             vals['unrevisioned_name'] = vals['name']
         return super(SaleOrder, self).create(vals)
     
-    @api.multi
     def action_revision(self):
         self.ensure_one()
         view_ref = self.env['ir.model.data'].get_object_reference('sale', 'view_order_form')
@@ -41,7 +40,6 @@ class SaleOrder(models.Model):
         }
         
     @api.returns('self', lambda value: value.id)
-    @api.multi
     def copy(self, defaults=None):
         if not defaults:
             defaults = {}

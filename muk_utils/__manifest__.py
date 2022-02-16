@@ -52,6 +52,6 @@
     },
     "sequence": 3,
     "application": False,
-    "installable": True,
+    "installable": False,
     "auto_install": False,
 }

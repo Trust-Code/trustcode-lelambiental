@@ -4,7 +4,7 @@
     <report id="action_nota_debito_reports"
             name="nota_debito.main_template_nota_debito"
             file="nota_debito.main_template_nota_debito"
-            model="account.invoice"
+            model="account.move"
             report_type="qweb-pdf"
             string="Nota de Débito"/>
 

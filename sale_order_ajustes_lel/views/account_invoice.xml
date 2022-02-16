@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
 
-    <record id="view_account_invoice_search" model="ir.ui.view">
+    <!-- <record id="view_account_invoice_search" model="ir.ui.view">
         <field name="name">view_account_invoice_search</field>
-        <field name="model">account.invoice</field>
+        <field name="model">account.move</field>
         <field name="inherit_id" ref="account.view_account_invoice_filter" />
         <field name="arch" type="xml">
             <filter name="duedate" position="after">
                 <filter string="Estados" name="group_state" domain="[]" context="{'group_by':'state_id'}"/>
             </filter>
         </field>
-    </record>
+    </record> -->
 
 </odoo>

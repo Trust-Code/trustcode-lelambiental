@@ -8,8 +8,8 @@ import dateutil.relativedelta as relativedelta
 from odoo import api, models, tools
 
 
-class AccountInvoice(models.Model):
-    _inherit = 'account.invoice'
+class AccountMove(models.Model):
+    _inherit = 'account.move'
 
     @api.multi
     def compute_legal_information(self):
