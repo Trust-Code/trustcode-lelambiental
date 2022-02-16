@@ -1,6 +1,6 @@
 {
     'name': "Enotif WooCommerce Order",
-    'version': '12.0.1.0.0',
+    'version': '14.0.1.0.0',
     'summary': """Receives notifications of new WooCommerce orders""",
     'description': """
        Receives notifications of new WooCommerce orders and saves them.

@@ -1,6 +1,6 @@
 {
     'name': "Enotif WooCommerce",
-    'version': '12.0.1.0.1',
+    'version': '14.0.1.0.0',
     'summary': """Connects the External Notifications module to WooCommerce""",
     'description': """
        Provides methods to connect the "External Notifications" module to a WooCommerce website.

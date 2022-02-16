@@ -3,7 +3,7 @@ import requests
 from odoo import fields, models
 from traceback import format_exception_only
 
-FLAG_FILE_PATH = '/wp-content/plugins/notify-odoo/pub/static/new_notifications_flag.txt' 
+FLAG_FILE_PATH = '/wp-content/plugins/notify-odoo/pub/static/new_notifications_flag.txt'
 REQUEST_NOTIFICATIONS_URL = '/wp-admin/admin-ajax.php?action=notifyodoo_get_notifications'
 URLOPEN_TIMEOUT = 30
 

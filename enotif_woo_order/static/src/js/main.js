@@ -14,7 +14,7 @@ odoo.define('enotif_woo_order.order', function (require) {
     
     start: function() {
 
-      this.$el.append(qweb.render("enotif_woo_template_order", {}));
+      this.$el.prepend(qweb.render("enotif_woo_template_order", {}));
 
       this.resultDiv = this.$('#enotif_woo_order_result');
     
@@ -56,7 +56,7 @@ odoo.define('enotif_woo_order.order', function (require) {
               self.resultDiv.html(message);                
            }
          }
-      }).fail(function(){ 
+      }).catch(function(){ 
          self.connectionResultDiv.html('<span class="error-message">ERROR: check if the Odoo server is running. Check server logs.</span>');
       });                          
     }  

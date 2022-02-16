@@ -99,7 +99,6 @@ class Order(models.AbstractModel):
             'user_id': self.env.ref('base.default_user').id,
             'team_id': self.env.ref('sales_team.salesteam_website_sales').id,
             'date_order': date_created,
-            'confirmation_date' : date_created,
             'state': 'sale'
           })
           
@@ -108,6 +107,8 @@ class Order(models.AbstractModel):
         if line_items:
           for item in line_items:
             sku = item.get('sku', '').strip()
+            if not sku:
+              sku = 'imported_product_' + str(item.get('product_id', ''))  
             record = self.env['product.product'].search([('default_code', '=', sku)], limit=1)
             if not record:
               record = self.env['product.product'].create({'name':item.get('name', ''), 'default_code':sku, 'list_price': item.get('price', 0.0), 'type':'service'})

@@ -30,7 +30,7 @@ odoo.define('enotif_woo.keys', function (require) {
         woocommerce_api_secret : this.woocommerceApiSecret ? this.woocommerceApiSecret : ''
       }
       
-      this.$el.append(qweb.render("enotif_woo_template_keys", {data: data}));
+      this.$el.prepend(qweb.render("enotif_woo_template_keys", {data: data}));
       
       this.connectionResultDiv = this.$('#uw_connection_result');     
                   
@@ -130,7 +130,7 @@ odoo.define('enotif_woo.keys', function (require) {
               self.connectionResultDiv.html(message);         
            }
          }
-      }).fail(function(){ 
+      }).catch(function(){ 
          self.connectionResultDiv.html('<span class="error-message">Odoo error before trying to connect.</span><br/>Try to enable the debugging mode and check server logs.');
       });                          
     }  

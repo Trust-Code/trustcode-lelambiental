@@ -33,7 +33,7 @@ odoo.define('enotif.general', function (require) {
         process_notifications : this.process_notifications
       }
       
-      this.$el.append(qweb.render("enotif_template_progress", {data: data}));
+      this.$el.prepend(qweb.render("enotif_template_progress", {data: data}));
         
       this.resultDiv = this.$('#enotif_get_notifications_result');   
                  
@@ -69,7 +69,7 @@ odoo.define('enotif.general', function (require) {
               resultDiv.html('There was some error. Check server logs.');                
            }
          }
-      }).fail(function(){ 
+      }).catch(function(){ 
          self.connectionResultDiv.html('<span class="error-message">ERROR: check if the Odoo server is running. Check server logs.</span>');
       });
           
@@ -100,7 +100,7 @@ odoo.define('enotif.general', function (require) {
               resultDiv.html('There was some error. Check server logs.');                
            }
          }
-      }).fail(function(){ 
+      }).catch(function(){ 
          resultDiv.html('<span class="error-message">ERROR: check if the Odoo server is running. Check server logs.</span>');
       });
           
@@ -129,12 +129,12 @@ odoo.define('enotif.general', function (require) {
             
               var message = 'Server error message:<br><textarea style="resize:both;height:100px">' + data.error_text + '</textarea><br/>';
               
-              message += 'Check connection in the "WooCommerce Keys" section';
+              message += 'Check connection in the "WooCommerce Keys" section. And check if the Notify Odoo plugin is enabled on the WooCommerce website.';
               
               resultDiv.html(message);                             
            }
          }
-      }).fail(function(){ 
+      }).catch(function(){ 
          resultDiv.html('<span class="error-message">ERROR: check if the Odoo server is running. Check server logs.</span>');
       });
           

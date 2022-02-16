@@ -18,7 +18,7 @@ Tech
 
 Installation
 ============
-- www.odoo.com/documentation/12.0/setup/install.html
+- www.odoo.com/documentation/14.0/setup/install.html
 - Install our custom addon
 
 
