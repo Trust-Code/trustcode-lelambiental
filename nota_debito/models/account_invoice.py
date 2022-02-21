@@ -11,7 +11,6 @@ from odoo import api, models, tools
 class AccountMove(models.Model):
     _inherit = 'account.move'
 
-    @api.multi
     def compute_legal_information(self):
         fiscal_ids = self.fiscal_observation_ids
 

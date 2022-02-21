@@ -15,7 +15,7 @@
         'Danimar Ribeiro <danimaribeiro@gmail.com>',
     ],
     'depends': [
-        'br_account',
+        'l10n_br_account',
     ],
     'data': [
         'reports/nota_debito.xml',

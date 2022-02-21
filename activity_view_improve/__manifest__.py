@@ -9,7 +9,7 @@
         'Danimar Ribeiro <danimaribeiro@gmail.com>',
     ],
     'depends': [
-        'br_sale',
+        'l10n_br_sale',
     ],
     'data': [
         'views/mail_activity.xml',

@@ -110,8 +110,6 @@
         <field name="name">Linhas das Cotações</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">sale.order.line</field>
-        <field name="inherit_id" ref="sale.view_order_line_tree"/>
-        <field name="view_type">form</field>
         <field name="view_mode">tree,form</field>
         <field name="search_view_id" ref="lel_order_product_categ"/>
         <field name="context">{'group_by': ['order_id']}</field>

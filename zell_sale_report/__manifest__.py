@@ -17,7 +17,7 @@
     ],
     'depends': [
         'stock',
-        'br_sale',
+        'l10n_br_sale',
     ],
     'data': [
         'views/sale_order.xml',

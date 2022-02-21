@@ -8,7 +8,6 @@ class MailActivity(models.Model):
     def action_view_object(self):
         return {
             'name': 'Atividades',
-            'view_type': 'form',
             'view_mode': 'form',
             'res_model': self.res_model,
             'res_id': self.res_id,

@@ -32,7 +32,6 @@ class SaleOrder(models.Model):
             'name': _('Sales Order'),
             'res_model': 'sale.order',
             'res_id': self.id,
-            'view_type': 'form',
             'view_mode': 'form',
             'view_id': view_id,
             'target': 'current',

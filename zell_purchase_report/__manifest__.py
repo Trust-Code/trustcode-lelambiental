@@ -17,7 +17,7 @@
     'depends': [
         'stock',
         'purchase',
-        'br_purchase_stock',
+        'l10n_br_purchase',
     ],
     'data': [
         'reports/purchase_order.xml',

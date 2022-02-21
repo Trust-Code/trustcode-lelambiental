@@ -9,7 +9,6 @@ from odoo import api, fields, models
 class PurchaseOrder(models.Model):
     _inherit = 'purchase.order'
 
-    @api.multi
     def _compute_tax_ipi_st(self):
         for item in self:
             item.total_st = sum(l.valor_st for l in item.order_line)
@@ -22,7 +21,6 @@ class PurchaseOrder(models.Model):
     user_confirmed_purchased_order_id = fields.Many2one(
         "res.users", string="Usuário")
 
-    @api.multi
     def button_confirm(self):
         res = super(PurchaseOrder, self).button_confirm()
         for order in self:
@@ -33,7 +31,6 @@ class PurchaseOrder(models.Model):
 class PurchaseOrderLine(models.Model):
     _inherit = 'purchase.order.line'
 
-    @api.multi
     def _compute_tax_ipi_st(self):
         for line in self:
             st = ipi = ali_ipi = 0.0
