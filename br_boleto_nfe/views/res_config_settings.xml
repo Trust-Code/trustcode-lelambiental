@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <record id="res_config_settings_email_boleto" model="ir.ui.view">
+    <!-- <record id="res_config_settings_email_boleto" model="ir.ui.view">
         <field name="name">res_config_settings.email.boleto</field>
         <field name="model">res.config.settings</field>
         <field name="inherit_id" ref="br_boleto.res_config_settings_email_boleto"/>
@@ -9,5 +9,5 @@
                 <attribute name="invisible">1</attribute>
             </div>
         </field>
-    </record>
+    </record> -->
 </odoo>
