@@ -12,13 +12,7 @@ class AccountMove(models.Model):
     _inherit = 'account.move'
 
     def compute_legal_information(self):
-        fiscal_ids = self.fiscal_observation_ids
-
-        prod_obs_ids = self.env['br_account.fiscal.observation'].browse()
-        for item in self.invoice_line_ids:
-            prod_obs_ids |= item.product_id.fiscal_observation_ids
-
-        fiscal_ids |= prod_obs_ids
+        fiscal_ids = self.fiscal_position_id.fiscal_observation_ids
         return self._compute_msg(fiscal_ids)
 
     def _compute_msg(self, observation_ids):

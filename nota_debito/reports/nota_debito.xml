@@ -16,18 +16,18 @@
                     <div class="card">
                         <div class="card-body" style="padding: 5px 15px;">
                             <address>
-                                <strong t-field="doc.company_id.legal_name" /><br />
+                                <strong t-field="doc.company_id.l10n_br_legal_name" /><br />
                                 <span t-field="doc.company_id.street" />
-                                <span t-field="doc.company_id.number" />
-                                <span t-field="doc.company_id.district" />
+                                <span t-field="doc.company_id.l10n_br_number" />
+                                <span t-field="doc.company_id.l10n_br_district" />
                                 <span t-field="doc.company_id.street2" />
                                 <br/>
                                 CEP: <span t-field="doc.company_id.zip" /> |
                                 Tel: <span t-field="doc.company_id.phone" />
                             </address>
                             <div>
-                                Inscrição Estadual nº <span t-field="doc.company_id.inscr_est" /><br />
-                                CNPJ <span t-field="doc.company_id.cnpj_cpf" /><br />
+                                Inscrição Estadual nº <span t-field="doc.company_id.l10n_br_inscr_est" /><br />
+                                CNPJ <span t-field="doc.company_id.l10n_br_cnpj_cpf" /><br />
                                 <span t-field="doc.company_id.email" /> | <span t-field="doc.company_id.website" />
                             </div>
                         </div>
@@ -49,14 +49,14 @@
                             <h5 class="card-title text-center">Nota de Débito</h5>
                         </div>
                         <div class="card-body" style="padding: 5px 15px;">
-                            <strong style="center">Data de emissão: <span t-field="doc.date_invoice" /></strong><br />
+                            <strong style="center">Data de emissão: <span t-field="doc.invoice_date" /></strong><br />
                         </div>
                     </div>
                 </div>
                 <div class="col-4">
                     <div class="card">
                         <div class="card-header bg-info" style="padding:3px 6px;">
-                            <h6 class="card-title">Nº FORMULÁRIO <span class="pull-right" t-field="doc.number" /></h6>
+                            <h6 class="card-title">Nº FORMULÁRIO <span class="pull-right" t-field="doc.name" /></h6>
                         </div>
                     </div>
                 </div>
@@ -70,11 +70,11 @@
                         </div>
                         <div class="card-body" style="padding: 5px 15px;">
                             <address style="margin-bottom:0px;">
-                                <strong>SACADO: </strong><span t-esc="doc.commercial_partner_id.legal_name or doc.commercial_partner_id.name" /><br />
+                                <strong>SACADO: </strong><span t-esc="doc.commercial_partner_id.l10n_br_legal_name or doc.commercial_partner_id.name" /><br />
                                 <strong>ENDEREÇO: </strong>
                                 <span t-field="doc.commercial_partner_id.street" />
-                                <span t-field="doc.commercial_partner_id.number" />
-                                <span t-field="doc.commercial_partner_id.district" />
+                                <span t-field="doc.commercial_partner_id.l10n_br_number" />
+                                <span t-field="doc.commercial_partner_id.l10n_br_district" />
                                 <span t-field="doc.commercial_partner_id.street2" />
                             </address>
                             <div class="row">
@@ -90,7 +90,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-4">
-                                    <strong>CNPJ: </strong><span t-field="doc.commercial_partner_id.cnpj_cpf" />
+                                    <strong>CNPJ: </strong><span t-field="doc.commercial_partner_id.l10n_br_cnpj_cpf" />
                                 </div>
                                 <div class="col-3">
                                     <strong>Tel: </strong><span t-field="doc.commercial_partner_id.phone" />
@@ -118,7 +118,7 @@
                                             <td class="text-center"><strong>Fatura</strong></td>
                                         </tr>
                                         <tr>
-                                            <td class="text-center"><h5 style="margin:0px;" t-field="doc.number"></h5></td>
+                                            <td class="text-center"><h5 style="margin:0px;" t-field="doc.name"></h5></td>
                                         </tr>
                                         <tr>
                                             <td class="text-center"><h4 style="margin:0px;" t-field="doc.amount_total"></h4></td>
@@ -203,9 +203,7 @@
                         <div class="card-body" style="padding: 5px 15px;">
                             <p t-raw="doc.compute_legal_information()">
                             </p>
-                            <p t-field="doc.fiscal_comment">
-                            </p>
-                            <p t-field="doc.comment">
+                            <p t-field="doc.narration">
                             </p>
                         </div>
                     </div>
@@ -215,7 +213,7 @@
             <div class="row">
                 <div class="col-12">
                     RECONHECEMOS O RECEBIMENTO DESTA FATURA PELA
-                    <span t-field="doc.company_id.legal_name" />,
+                    <span t-field="doc.company_id.l10n_br_legal_name" />,
                     DE PRESTAÇÃO DE SERVIÇOS PROFISSIONAIS CONSTANTES NESTA NOTA DE DÉBITO/FATURA
                 </div>
             </div>

@@ -39,10 +39,10 @@
                           <img class="logo" t-att-src="'data:image/png;base64,%s' % to_text(o.company_id.logo)" />
                       </div>
                       <div class="col-8" >
-                          <span class="legal-name" t-field="o.company_id.legal_name"></span><br />
+                          <span class="legal-name" t-field="o.company_id.l10n_br_legal_name"></span><br />
                           <span class="company-data">
                               <span t-field="o.company_id.street"></span> -
-                              <span t-field="o.company_id.number"/>
+                              <span t-field="o.company_id.l10n_br_number"/>
                               <span t-field="o.company_id.street2"/> -
                               <span t-field="o.company_id.zip"></span> -
                               <span t-field="o.company_id.city_id.name"></span> -
@@ -55,9 +55,9 @@
                               <br />
 
                               <span>CNPJ:</span>
-                              <span t-field="o.company_id.cnpj_cpf"/>
+                              <span t-field="o.company_id.l10n_br_cnpj_cpf"/>
                               <span>Inscr. Est.:</span>
-                              <span t-field="o.company_id.inscr_est"/>
+                              <span t-field="o.company_id.l10n_br_inscr_est"/>
                           </span>
                       </div>
                     </div>
@@ -84,19 +84,19 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="row margin-top">
-                                <span class="col-2 no-padding-right enfase">FORNECEDOR: </span><span class="margin-left" t-field="o.partner_id.legal_name"/>
+                                <span class="col-2 no-padding-right enfase">FORNECEDOR: </span><span class="margin-left" t-field="o.partner_id.l10n_br_legal_name"/>
                             </div>
                         </div>
                     </div>
                     <div class="row margin-tb">
                         <div class="col-6">
                             <div class="row">
-                                <span class="col-4 enfase">CNPJ: </span><span class="margin-left" t-field="o.partner_id.cnpj_cpf"/>
+                                <span class="col-4 enfase">CNPJ: </span><span class="margin-left" t-field="o.partner_id.l10n_br_cnpj_cpf"/>
                             </div>
                         </div>
                         <div class="col-6">
                             <div class="row">
-                                <span class="col-4 enfase">INSC. EST: </span><span class="" t-field="o.partner_id.inscr_est"/>
+                                <span class="col-4 enfase">INSC. EST: </span><span class="" t-field="o.partner_id.l10n_br_inscr_est"/>
                             </div>
                         </div>
                     </div>
@@ -110,7 +110,7 @@
                                 <span class="col-2 enfase">ENDEREÇO:</span>
                                 <span class="">
                                     <span class="margin-left" t-field="o.partner_id.street"/>
-                                    <span class="" t-field="o.partner_id.number"/>
+                                    <span class="" t-field="o.partner_id.l10n_br_number"/>
                                     <span class="" t-field="o.partner_id.street2"/> -
                                     <span class="" t-field="o.partner_id.zip"/> -
                                     <span class="" t-field="o.partner_id.city_id.name"/> -
@@ -158,9 +158,9 @@
                             <div class="row margin-top">
                                 <div class="col-2 no-padding-right"><span class="enfase">ENTREGA:</span></div>
                                 <div class="col-10">
-                                    <span class=" margin-tb" t-field="o.company_id.legal_name"></span> -
-                                    <span class=" margin-tb" t-field="o.company_id.cnpj_cpf"></span> -
-                                    <span class=" margin-tb" t-field="o.company_id.inscr_est"></span>
+                                    <span class=" margin-tb" t-field="o.company_id.l10n_br_legal_name"></span> -
+                                    <span class=" margin-tb" t-field="o.company_id.l10n_br_cnpj_cpf"></span> -
+                                    <span class=" margin-tb" t-field="o.company_id.l10n_br_inscr_est"></span>
                                 </div>
                             </div>
                             <div class="row margin-tb">
@@ -168,7 +168,7 @@
                                 <div class="col-10">
                                     <span class="margin-bottom">
                                         <span class="" t-field="o.company_id.street"/> -
-                                        <span class="" t-field="o.company_id.number"/>
+                                        <span class="" t-field="o.company_id.l10n_br_number"/>
                                         <span class="" t-field="o.company_id.street2"/> -
                                         <span class="" t-field="o.company_id.zip"/> -
                                         <span class="" t-field="o.company_id.city_id.name"/> - <span class="" t-field="o.company_id.state_id.code" />
@@ -182,9 +182,9 @@
                             <div class="row margin-top">
                                 <div class="col-2 no-padding-right"><span class="enfase">COBRANÇA:</span></div>
                                 <div class="col-10">
-                                    <span class=" margin-tb" t-field="o.company_id.legal_name"></span> -
-                                    <span class=" margin-tb" t-field="o.company_id.cnpj_cpf"></span> -
-                                    <span class=" margin-tb" t-field="o.company_id.inscr_est"></span>
+                                    <span class=" margin-tb" t-field="o.company_id.l10n_br_legal_name"></span> -
+                                    <span class=" margin-tb" t-field="o.company_id.l10n_br_cnpj_cpf"></span> -
+                                    <span class=" margin-tb" t-field="o.company_id.l10n_br_inscr_est"></span>
                                 </div>
                             </div>
                             <div class="row margin-tb">
@@ -192,7 +192,7 @@
                                 <div class="col-10">
                                     <span class="margin-bottom">
                                         <span class="" t-field="o.company_id.street"/> -
-                                        <span class="" t-field="o.company_id.number"/>
+                                        <span class="" t-field="o.company_id.l10n_br_number"/>
                                         <span class="" t-field="o.company_id.street2"/> -
                                         <span class="" t-field="o.company_id.zip"/> -
                                         <span class="" t-field="o.company_id.city_id.name"/> -
@@ -207,9 +207,9 @@
                             <div class="row margin-top">
                                 <div class="col-2 no-padding-right"><span class="enfase">FATURAMENTO</span></div>
                                 <div class="col-10">
-                                    <span class=" margin-tb" t-field="o.company_id.legal_name"></span> -
-                                    <span class=" margin-tb" t-field="o.company_id.cnpj_cpf"></span> -
-                                    <span class=" margin-tb" t-field="o.company_id.inscr_est"></span>
+                                    <span class=" margin-tb" t-field="o.company_id.l10n_br_legal_name"></span> -
+                                    <span class=" margin-tb" t-field="o.company_id.l10n_br_cnpj_cpf"></span> -
+                                    <span class=" margin-tb" t-field="o.company_id.l10n_br_inscr_est"></span>
                                 </div>
                             </div>
                             <div class="row margin-tb">
@@ -217,7 +217,7 @@
                                 <div class="col-10">
                                     <span class="margin-bottom">
                                         <span class="" t-field="o.company_id.street"/> -
-                                        <span class="" t-field="o.company_id.number"/>
+                                        <span class="" t-field="o.company_id.l10n_br_number"/>
                                         <span class="" t-field="o.company_id.street2"/> -
                                         <span class="" t-field="o.company_id.zip"/> -
                                         <span class="" t-field="o.company_id.city_id.name"/> - <span class="" t-field="o.company_id.state_id.code" />
@@ -324,7 +324,7 @@
                     <span>TOTAL SEM IPI..</span><span class="indent"></span><span class="pull-right" t-esc="'%.2f'%(o.amount_untaxed)"/><br/>
                     <span>TOTAL IPI......</span><span class="indent"></span><span class="pull-right" t-esc="'%.2f'%(o.total_ipi)"/><br/>
                     <span>TOTAL ST.......</span><span class="indent"></span><span class="pull-right" t-esc="'%.2f'%(o.total_st)"/><br/>
-                    <span>TOTAL FRETE....</span><span class="indent"></span><span class="pull-right" t-esc="'%.2f'%(o.total_frete)"/><br/>
+                    <span>TOTAL FRETE....</span><span class="indent"></span><span class="pull-right" t-esc="'%.2f'%(o.l10n_br_delivery_amount)"/><br/>
                     <span>VALOR TOTAL....</span><span class="indent"></span><span class="pull-right" t-esc="'%.2f'%(o.amount_total)" /><br/>
                 </div>
             </div>
