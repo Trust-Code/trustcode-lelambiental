@@ -9,10 +9,8 @@ from odoo import fields, models
 class SaleOrder(models.Model):
     _inherit = 'sale.order'
 
-    transportadora = fields.Many2one('res.partner',
-                                    domain="[('customer','=',True)]",
-                                    string="Transportadora",
-                                    )
+    transportadora = fields.Many2one(
+        'res.partner', string="Transportadora")
     garantia = fields.Integer(string="Garantia")
 
 

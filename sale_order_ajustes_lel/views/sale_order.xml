@@ -90,6 +90,7 @@
                 <group>
                     <field name="product_id"/>
                     <field name="order_id"/>
+                    <field name="company_id" />
                     <field name="order_partner_id"/>
                     <field name="name"/>
                     <field name="salesman_id"/>
@@ -99,6 +100,7 @@
                     <field name="qty_delivered"/>
                     <field name="qty_invoiced"/>
                     <field name="qty_to_invoice"/>
+                    <field name="product_uom_category_id" invisible="1" />
                     <field name="product_uom" string="Unit of Measure" groups="product.group_uom"/>
                     <field name="price_subtotal" sum="Total" widget="monetary"/>
                 </group>
@@ -117,6 +119,6 @@
 
     <menuitem sequence="10" action="action_lel_order_line"
         id="menu_action_payment_order_line"
-        parent="sale.sale_order_menu"/>
+        parent="sale.sale_order_menu"/> 
 
 </odoo>

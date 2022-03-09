@@ -12,13 +12,9 @@ def convert_binary_fields_to_attachment(env):
     }
     # openupgrade_90.convert_binary_field_to_attachment(env, spec)
     # Force rewrite to force resizing and recomputing smaller thumbnails
-    env["dms.file"].search([])._compute_image_1920()
-    for record in env["dms.file"].search(
-        [("image_1920", "!=", False), "!", ("mimetype", "=ilike", "image/%")]
-    ):
-        record.image_1920 = record.image_1920
-    for record in env["dms.directory"].search([("image_1920", "!=", False)]):
-        record.image_1920 = record.image_1920
+    for model in spec:
+        for record in env[model].search([("image_1920", "!=", False)]):
+            record.image_1920 = record.image_1920
 
 
 @openupgrade.migrate(use_env=True)
