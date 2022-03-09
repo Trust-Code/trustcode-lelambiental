@@ -5,9 +5,9 @@
         id="menu_br_payments"
         name="Receber e Pagar"
         parent="account.menu_finance"/>
-
+<!-- 
     <menuitem sequence="10" action="action_receivable_move_line"
               id="menu_action_receivable_move_line"
-              parent="menu_br_payments"/>
+              parent="menu_br_payments"/> -->
 
 </odoo>
