@@ -11,15 +11,15 @@ from ..boleto.document import Boleto
 class IrActionsReport(models.Model):
     _inherit = 'ir.actions.report'
 
-    def render_qweb_html(self, res_ids, data=None):
+    def _render_qweb_html(self, res_ids, data=None):
         if self.name == 'Boleto':
             return
-        return super(IrActionsReport, self).render_qweb_html(
+        return super(IrActionsReport, self)._render_qweb_html(
             res_ids, data=data)
 
-    def render_qweb_pdf(self, res_ids, data=None):
+    def _render_qweb_pdf(self, res_ids, data=None):
         if not self.name == 'Boleto':
-            return super(IrActionsReport, self).render_qweb_pdf(
+            return super(IrActionsReport, self)._render_qweb_pdf(
                 res_ids, data=data)
 
         move_line_ids = self.env['account.move.line'].browse()
