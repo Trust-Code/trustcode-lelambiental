@@ -96,25 +96,26 @@ class CrmLead(models.Model):
         if self.city_id:
             self.city = self.city_id.name
 
-    def _onchange_partner_id_values(self, partner_id):
-        res = super(CrmLead, self)._onchange_partner_id_values(partner_id)
-        if partner_id:
-            partner = self.env['res.partner'].browse(partner_id)
-            val = re.sub('[^0-9]', '', partner.cnpj_cpf or '')
-            if len(val) == 11:
-                cnpj_cpf = 'cpf'
-            else:
-                cnpj_cpf = 'cnpj'
-            res.update({
-                'legal_name': partner.legal_name,
-                cnpj_cpf: partner.cnpj_cpf,
-                'inscr_est': partner.inscr_est,
-                'suframa': partner.suframa,
-                'number': partner.number,
-                'district': partner.district,
-                'city_id': partner.city_id.id,
-            })
-        return res
+    # TODO Ajustar esse metodo
+    # def _prepare_address_values_from_partner(self, partner_id):
+    #     res = super(CrmLead, self)._prepare_address_values_from_partner(partner_id)
+    #     if partner_id:
+    #         partner = self.env['res.partner'].browse(partner_id)
+    #         val = re.sub('[^0-9]', '', partner.cnpj_cpf or '')
+    #         if len(val) == 11:
+    #             cnpj_cpf = 'cpf'
+    #         else:
+    #             cnpj_cpf = 'cnpj'
+    #         res.update({
+    #             'legal_name': partner.legal_name,
+    #             cnpj_cpf: partner.cnpj_cpf,
+    #             'inscr_est': partner.inscr_est,
+    #             'suframa': partner.suframa,
+    #             'number': partner.l10n_br_number,
+    #             'district': partner.district,
+    #             'city_id': partner.city_id.id,
+    #         })
+    #     return res
 
     def _create_lead_partner_data(self, name, is_company, parent_id=False):
         partner = super(CrmLead, self)._create_lead_partner_data(
@@ -140,8 +141,3 @@ class CrmLead(models.Model):
                 })
         return partner
 
-    @api.model
-    def create(self, vals):
-        vals.update(self._onchange_partner_id_values(
-            vals['partner_id'] if vals.get('partner_id') else False))
-        return super(CrmLead, self).create(vals)
