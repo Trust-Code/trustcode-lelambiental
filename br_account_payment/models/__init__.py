@@ -11,3 +11,4 @@ from . import payment_order
 from . import payment_statement
 from . import res_config_settings
 from . import company
+from . import res_partner_bank

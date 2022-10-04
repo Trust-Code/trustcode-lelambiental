@@ -35,10 +35,9 @@ class PaymentOrder(models.Model):
             self.env['ir.attachment'].create({
                 'name': self.name,
                 'datas': self.cnab_file,
-                'datas_fname': self.name,
                 'description': 'Arquivo CNAB 240',
                 'res_model': 'payment.order',
-                'res_id': order_id
+                'res_id': order_id.id
             })
 
 
