@@ -13,6 +13,12 @@ class SaleOrder(models.Model):
         'res.partner', string="Transportadora")
     garantia = fields.Integer(string="Garantia")
 
+    def _prepare_invoice(self):
+        vals = super(SaleOrder, self)._prepare_invoice()
+        if not vals.get('carrier_partner_id'):
+            vals["carrier_partner_id"] = self.transportadora.id
+        return vals
+
 
 class SaleOrderLine(models.Model):
     _inherit = 'sale.order.line'
