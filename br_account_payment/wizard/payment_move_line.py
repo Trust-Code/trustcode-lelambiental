@@ -56,8 +56,8 @@ class PaymentAccountMoveLine(models.TransientModel):
             amount = move_line[0].amount_residual if \
                 rec['partner_type'] == 'customer' else \
                 move_line[0].amount_residual * -1
-        if move_line[0].invoice_id:
-            invoice = move_line[0].invoice_id
+        if move_line[0].move_id:
+            invoice = move_line[0].move_id
             rec.update({'invoice_id': invoice.id})
         rec.update({
             'amount': amount,
