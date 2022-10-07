@@ -97,8 +97,8 @@ class PaymentAccountMoveLine(models.TransientModel):
         pay = payment.with_context(
             force_counterpart_account=self.move_line_id.account_id.id).\
             create(vals)
-        pay.post()
+        pay.action_post()
         move_line = self.env['account.move.line'].browse(vals['move_line_id'])
-        lines_to_reconcile = (pay.move_line_ids + move_line).filtered(
+        lines_to_reconcile = (pay.line_ids + move_line).filtered(
             lambda l: l.account_id == move_line.account_id)
         lines_to_reconcile.reconcile()

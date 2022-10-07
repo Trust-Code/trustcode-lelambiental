@@ -11,6 +11,8 @@ class AccountPayment(models.Model):
                                    string="Linha de fatura")
     total_moves = fields.Integer(
         'Linha(s)', compute='_compute_open_moves')
+    communication = fields.Char(string='Anotações')
+    payment_date = fields.Date(string='Data de Pagamento')
 
     @api.depends('partner_id', 'partner_type')
     def _compute_open_moves(self):
