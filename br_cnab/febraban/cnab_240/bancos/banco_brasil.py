@@ -15,7 +15,7 @@ class BancoBrasil240(Cnab240):
     def _prepare_header(self):
         vals = super(BancoBrasil240, self)._prepare_header()
         vals['codigo_convenio_banco'] = self.format_codigo_convenio_banco(
-            self.order.payment_mode_id)
+            self.order.journal_id)
         vals['controlecob_numero'] = self.order.id
         vals['controlecob_data_gravacao'] = self.data_hoje()
         return vals
@@ -23,10 +23,10 @@ class BancoBrasil240(Cnab240):
     def _prepare_segmento(self, line):
         vals = super(BancoBrasil240, self)._prepare_segmento(line)
         vals['codigo_convenio_banco'] = self.format_codigo_convenio_banco(
-            line.payment_mode_id)
-        vals['carteira_numero'] = int(line.payment_mode_id.boleto_carteira[:2])
+            line.journal_id)
+        vals['carteira_numero'] = int(line.journal_id.boleto_carteira[:2])
         vals['nosso_numero'] = self.format_nosso_numero(
-            line.payment_mode_id.boleto_cnab_code, line.nosso_numero)
+            line.journal_id.boleto_cnab_code, line.nosso_numero)
         vals['codigo_baixa'] = 0
         vals['prazo_baixa'] = ''
         vals['controlecob_numero'] = self.order.id
@@ -36,14 +36,14 @@ class BancoBrasil240(Cnab240):
         # 2 - Taxa Mensal
         # 3 - Isento (deve ser cadastrado no banco)
         vals['juros_cod_mora'] = int(
-            line.payment_mode_id.late_payment_interest_type)
+            line.journal_id.late_payment_interest_type)
 
         if vals['juros_cod_mora'] in [3]:
             vals['juros_mora_taxa'] = Decimal(str(0.00)).quantize(
                 Decimal('1.00'))
         else:
             vals['juros_mora_taxa'] = Decimal(
-                str(self.order.payment_mode_id.late_payment_interest)
+                str(self.order.journal_id.late_payment_interest)
                 ).quantize(Decimal('1.00'))
 
         # Banco do Brasil aceita apenas código de protesto 1, 2, ou
@@ -69,12 +69,12 @@ class BancoBrasil240(Cnab240):
             '99': 99,
             }
         especie_titulo = especie_titulo_banco[
-            line.payment_mode_id.boleto_especie]
+            line.journal_id.boleto_especie]
         vals['especie_titulo'] = especie_titulo
         vals['multa_codigo'] = vals['codigo_multa']
         vals['multa_data'] = self.format_date(line.date_maturity)
         vals['multa_percentual'] = Decimal(
-            str(self.order.payment_mode_id.late_payment_fee)).quantize(
+            str(self.order.journal_id.late_payment_fee)).quantize(
                 Decimal('1.00'))
         return vals
 
