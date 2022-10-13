@@ -21,17 +21,11 @@
     ],
     'data': [
         'security/ir.model.access.csv',
-        'views/account_invoice.xml',
         'views/br_account_payment.xml',
-        'views/payment_mode.xml',
-        'views/account_payment.xml',
-        'views/account_journal.xml',
-        'views/account_move.xml',
         'views/payment_order.xml',
         'views/res_settings.xml',
         'views/payment_statement.xml',
         'views/res_partner_bank.xml',
-        'security/account_security.xml',
         'wizard/payment_cnab_import.xml',
         'wizard/payment_move_line.xml'
     ],

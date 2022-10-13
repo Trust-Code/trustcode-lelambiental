@@ -30,7 +30,7 @@ class Cef240(Cnab240):
 
         vals['cedente_codigo_codCedente'] = 6088
         vals['nome_do_banco'] = u'CAIXA ECONOMICA FEDERAL'
-        if self.order.payment_mode_id.l10n_br_environment == 'test':
+        if self.order.journal_id.l10n_br_environment == 'test':
             vals['reservado_cedente_campo23'] = 'REMESSA TESTE'
         else:
             vals['reservado_cedente_campo23'] = 'REMESSA-PRODUCAO'
@@ -44,11 +44,11 @@ class Cef240(Cnab240):
 
         vals['cedente_convenio'] = int(vals['cedente_convenio'])
         vals['cedente_beneficiario'] = vals['cedente_convenio']
-        vals['carteira_numero'] = int(line.payment_mode_id.boleto_modalidade)
+        vals['carteira_numero'] = int(line.journal_id.boleto_modalidade)
 
         # Segue a mesma regra de geração do dv do boleto
         # Carteira 1 + fixo 4 + 15 posições nosso número - aplica modulo 11
-        numero = "%1s4%15s" % (int(line.payment_mode_id.boleto_carteira),
+        numero = "%1s4%15s" % (int(line.journal_id.boleto_carteira),
                                line.nosso_numero.zfill(15))
         nosso_numero = "%s%s" % (line.nosso_numero,
                                  BoletoData.modulo11(numero))

@@ -40,7 +40,7 @@ class Boleto:
 
     @staticmethod
     def getBoleto(order_line, nosso_numero):
-        boleto_type = order_line.payment_mode_id.boleto_type
+        boleto_type = order_line.journal_id.boleto_type
         if boleto_type:
             return dict_boleto[boleto_type][0](order_line, nosso_numero)
         raise BoletoException(u'Configure o tipo de boleto no modo de '
@@ -70,7 +70,7 @@ class Boleto:
         return self.branch_number
 
     def _order_line(self, order_line):
-        self._payment_mode(order_line.payment_mode_id)
+        self._payment_mode(order_line.journal_id)
         self.boleto.data_vencimento = order_line.date_maturity
         self.boleto.data_documento = order_line.emission_date
         self.boleto.data_processamento = date.today()
@@ -82,16 +82,16 @@ class Boleto:
         # Importante - Número documento deve ser o identificador único da linha
         self.boleto.numero_documento = order_line.identifier
 
-    def _payment_mode(self, payment_mode_id):
+    def _payment_mode(self, journal_id):
         """
         :param payment_mode:
         :return:
         """
-        self.boleto.convenio = payment_mode_id.boleto_cnab_code
-        self.boleto.especie_documento = especie[payment_mode_id.boleto_especie]
-        self.boleto.aceite = payment_mode_id.boleto_aceite
-        self.boleto.carteira = payment_mode_id.boleto_carteira
-        self.boleto.instrucoes = payment_mode_id.instrucoes or ''
+        self.boleto.convenio = journal_id.boleto_cnab_code
+        self.boleto.especie_documento = especie[journal_id.boleto_especie]
+        self.boleto.aceite = journal_id.boleto_aceite
+        self.boleto.carteira = journal_id.boleto_carteira
+        self.boleto.instrucoes = journal_id.instrucoes or ''
 
     def _cedente(self, company):
         """
@@ -253,7 +253,7 @@ class BoletoSantander(Boleto):
         self.boleto.nosso_numero = self.nosso_numero
 
         self.boleto.conta_cedente = \
-            order_line.payment_mode_id.boleto_cnab_code
+            order_line.journal_id.boleto_cnab_code
 
 
 class BoletoSicredi(Boleto):
