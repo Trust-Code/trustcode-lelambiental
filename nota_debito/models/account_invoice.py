@@ -51,8 +51,6 @@ class AccountMove(models.Model):
 
         result = ''
         for item in observation_ids:
-            if item.document_id != self.product_document_id:
-                continue
             template = mako_safe_env.from_string(tools.ustr(item.message))
             variables = {
                 'user': self.env.user,
