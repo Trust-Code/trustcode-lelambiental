@@ -17,7 +17,7 @@ class PaymentOrderLine(models.Model):
 
     name = fields.Char(string="Ref.", size=20)
     identifier = fields.Char(
-        string="Identificador", compute="_compute_identifier"
+        string="Identificador", compute="_compute_identifier", store=True
     )
     payment_order_id = fields.Many2one(
         "payment.order", string="Ordem de Pagamento", ondelete="restrict"
