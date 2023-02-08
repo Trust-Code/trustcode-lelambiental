@@ -14,13 +14,4 @@
     'depends': [
         'l10n_br_eletronic_document',
     ],
-    'external_dependencies': {
-        'python': [
-            'pytrustnfe',
-        ],
-    },
-    'data': [
-    ],
-    'demo': [
-    ],
 }

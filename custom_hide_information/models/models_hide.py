@@ -6,7 +6,7 @@ class EletronicDocument(models.Model):
 
 
     def _compute_legal_information(self):
-        super(EletronicDocument, self)._compute_legal_information
+        res=super(EletronicDocument, self)._compute_legal_information
         fiscal_ids = self.fiscal_position_id.fiscal_observation_ids.filtered(
             lambda x: x.tipo == "fiscal"
                       and x.tipo_produto in [False] + self.document_line_ids.mapped("tipo_produto")
@@ -21,3 +21,4 @@ class EletronicDocument(models.Model):
         observacao = self._compute_msg(obs_ids)
         self.informacoes_legais = fiscal
         self.informacoes_complementares = observacao
+        return res
