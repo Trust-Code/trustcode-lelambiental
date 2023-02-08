@@ -11,13 +11,9 @@ class PaymentOrderLine(models.Model):
     _description = "Linha de Pagamento/Cobrança"
     _inherit = ["mail.thread", "mail.activity.mixin"]
 
-    def _compute_identifier(self):
-        for item in self:
-            item.identifier = "%08d" % item.id
-
     name = fields.Char(string="Ref.", size=20)
     identifier = fields.Char(
-        string="Identificador", compute="_compute_identifier", store=True
+        string="Identificador", store=True, readonly=True
     )
     payment_order_id = fields.Many2one(
         "payment.order", string="Ordem de Pagamento", ondelete="restrict"
@@ -87,6 +83,13 @@ class PaymentOrderLine(models.Model):
 
     def action_cancel_line(self):
         self.write({"state": "cancelled"})
+
+    @api.model
+    def create(self, vals):
+        res = super(PaymentOrderLine, self).create(vals)
+        # O compute do identifier nao roda
+        res.write({'identifier': "%08d" % res.id})
+        return res
 
 
 class PaymentOrder(models.Model):
